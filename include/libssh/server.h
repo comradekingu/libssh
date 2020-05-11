@@ -85,13 +85,13 @@ LIBSSH_API ssh_bind ssh_bind_new(void);
 /**
  * @brief Set the options for the current SSH server bind.
  *
- * @param  sshbind     The ssh server bind to configure.
+ * @param  sshbind     The SSH server bind to configure.
  *
  * @param  type The option type to set. This could be one of the
  *              following:
  *
  *              - SSH_BIND_OPTIONS_BINDADDR
- *                The ip address to bind (const char *).
+ *                The IP address to bind (const char *).
  *
  *              - SSH_BIND_OPTIONS_BINDPORT
  *                The port to bind (unsigned int).
@@ -104,11 +104,11 @@ LIBSSH_API ssh_bind ssh_bind_new(void);
  *                by SSHv1. (const char *).
  *
  *              - SSH_BIND_OPTIONS_DSAKEY
- *                This specifies the file containing the private host dsa key
+ *                This specifies the file containing the private host DSA key
  *                used by SSHv2. (const char *).
  *
  *              - SSH_BIND_OPTIONS_RSAKEY
- *                This specifies the file containing the private host dsa key
+ *                This specifies the file containing the private host DSA key
  *                used by SSHv2. (const char *).
  *
  *              - SSH_BIND_OPTIONS_BANNER
@@ -123,7 +123,7 @@ LIBSSH_API ssh_bind ssh_bind_new(void);
  *                - SSH_LOG_NOLOG: No logging
  *                - SSH_LOG_RARE: Rare conditions or warnings
  *                - SSH_LOG_ENTRY: API-accessible entrypoints
- *                - SSH_LOG_PACKET: Packet id and size
+ *                - SSH_LOG_PACKET: Packet ID and size
  *                - SSH_LOG_FUNCTIONS: Function entering and leaving
  *
  *              - SSH_BIND_OPTIONS_LOG_VERBOSITY_STR
@@ -134,7 +134,7 @@ LIBSSH_API ssh_bind ssh_bind_new(void);
  *                - SSH_LOG_NOLOG: No logging
  *                - SSH_LOG_RARE: Rare conditions or warnings
  *                - SSH_LOG_ENTRY: API-accessible entrypoints
- *                - SSH_LOG_PACKET: Packet id and size
+ *                - SSH_LOG_PACKET: Packet ID and size
  *                - SSH_LOG_FUNCTIONS: Function entering and leaving
  *                \n
  *                See the corresponding numbers in libssh.h.
@@ -151,7 +151,7 @@ LIBSSH_API int ssh_bind_options_set(ssh_bind sshbind,
 /**
  * @brief Start listening to the socket.
  *
- * @param  ssh_bind_o     The ssh server bind to use.
+ * @param  ssh_bind_o     The SSH server bind to use.
  *
  * @return 0 on success, < 0 on error.
  */
@@ -183,7 +183,7 @@ LIBSSH_API int ssh_bind_set_callbacks(ssh_bind sshbind, ssh_bind_callbacks callb
 /**
  * @brief  Set the session to blocking/nonblocking mode.
  *
- * @param  ssh_bind_o     The ssh server bind to use.
+ * @param  ssh_bind_o     The SSH server bind to use.
  *
  * @param  blocking     Zero for nonblocking mode.
  */
@@ -192,7 +192,7 @@ LIBSSH_API void ssh_bind_set_blocking(ssh_bind ssh_bind_o, int blocking);
 /**
  * @brief Recover the file descriptor from the session.
  *
- * @param  ssh_bind_o     The ssh server bind to get the fd from.
+ * @param  ssh_bind_o     The SSH server bind to get the FD from.
  *
  * @return The file descriptor.
  */
@@ -201,7 +201,7 @@ LIBSSH_API socket_t ssh_bind_get_fd(ssh_bind ssh_bind_o);
 /**
  * @brief Set the file descriptor for a session.
  *
- * @param  ssh_bind_o     The ssh server bind to set the fd.
+ * @param  ssh_bind_o     The SSH server bind to set the FD.
  *
  * @param  fd           The file descriptssh_bind B
  */
@@ -210,15 +210,15 @@ LIBSSH_API void ssh_bind_set_fd(ssh_bind ssh_bind_o, socket_t fd);
 /**
  * @brief Allow the file descriptor to accept new sessions.
  *
- * @param  ssh_bind_o     The ssh server bind to use.
+ * @param  ssh_bind_o     The SSH server bind to use.
  */
 LIBSSH_API void ssh_bind_fd_toaccept(ssh_bind ssh_bind_o);
 
 /**
  * @brief Accept an incoming ssh connection and initialize the session.
  *
- * @param  ssh_bind_o     The ssh server bind to accept a connection.
- * @param  session			A preallocated ssh session
+ * @param  ssh_bind_o     The SSH server bind to accept a connection.
+ * @param  session			A preallocated SSH session
  * @see ssh_new
  * @return SSH_OK when a connection is established
  */
@@ -227,7 +227,7 @@ LIBSSH_API int ssh_bind_accept(ssh_bind ssh_bind_o, ssh_session session);
 /**
  * @brief Handles the key exchange and set up encryption
  *
- * @param  session			A connected ssh session
+ * @param  session			A connected SSH session
  * @see ssh_bind_accept
  * @return SSH_OK if the key exchange was successful
  */
@@ -236,7 +236,7 @@ LIBSSH_API int ssh_handle_key_exchange(ssh_session session);
 /**
  * @brief Free a ssh servers bind.
  *
- * @param  ssh_bind_o     The ssh server bind to free.
+ * @param  ssh_bind_o     The SSH server bind to free.
  */
 LIBSSH_API void ssh_bind_free(ssh_bind ssh_bind_o);
 
